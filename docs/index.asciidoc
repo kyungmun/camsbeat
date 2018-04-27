@@ -1,0 +1,5 @@
+= camsbeat Docs
+
+Welcome to the camsbeat documentation.
+
+

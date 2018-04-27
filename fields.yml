@@ -1,0 +1,14 @@
+- key: camsbeat
+  title: camsbeat
+  description:
+  fields:
+    - name: counter
+      type: long
+      required: true
+      description: >
+        PLEASE UPDATE DOCUMENTATION
+    #new fields added lsbeat
+    - name: modtime
+      type: date
+
+

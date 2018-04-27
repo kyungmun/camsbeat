@@ -1,0 +1,148 @@
+{
+  "mappings": {
+    "_default_": {
+      "_all": {
+        "norms": false
+      },
+      "_meta": {
+        "version": "1.0.0"
+      },
+      "dynamic_templates": [
+        {
+          "strings_as_keyword": {
+            "mapping": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "match_mapping_type": "string"
+          }
+        }
+      ],
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "meta": {
+          "properties": {
+            "cloud": {
+              "properties": {
+                "availability_zone": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "instance_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "machine_type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "project_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "provider": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "region": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "account_id": {
+          "type": "keyword"
+        },
+        "agent": {
+          "properties": {
+            "country": {
+              "type": "keyword"
+            },
+            "name": {
+              "type": "keyword"
+            },
+            "version": {
+              "type": "keyword"
+            }
+          }
+        },
+        "createtime": {
+          "type": "date"
+        },
+        "error": {
+          "properties": {
+            "kinds": {
+              "type": "keyword"
+            },
+            "message": {
+              "type": "keyword"
+            }
+          }
+        },
+        "host": {
+          "type": "keyword"
+        },
+        "ip": {
+          "type": "ip"
+        },
+        "isrealtime": {
+          "type": "boolean"
+        },
+        "kinds": {
+          "type": "keyword"
+        },
+        "object_id": {
+          "type": "keyword"
+        },
+        "port": {
+          "type": "integer"
+        },
+        "response": {
+          "properties": {
+            "ms": {
+              "type": "integer"
+            },
+            "status": {
+              "type": "keyword"
+            }
+          }
+        },
+        "type_name": {
+          "type": "keyword"
+        },
+        "up": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "keyword"
+        }
+      }
+    }
+  },
+  "order": 0,
+  "settings": {
+    "index.refresh_interval": "5s",
+    "analysis": {
+      "analyzer": {
+        "ls_ngram_analyzer": {
+          "tokenizer": "ls_ngram_tokenizer"
+        }
+      },
+      "tokenizer": {
+        "ls_ngram_tokenizer": {
+          "type": "ngram",
+          "min_gram": "2",
+          "token_chars": [
+            "letter",
+            "digit"
+          ]
+        }
+      }
+    }	
+  },
+  "template": "camsbeat-*"
+}
